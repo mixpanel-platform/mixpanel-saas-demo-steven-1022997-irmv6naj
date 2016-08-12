@@ -15,8 +15,46 @@
 		<link rel="stylesheet" type="text/css" href="src/css/appStyle.css">	    	
 	</head>
 	<body>
-		<div id="root"></div>
-		<script type="text/javascript" src="public/mpApp.js"></script>
-		<!--<script src="/app.js"></script>-->
+		<div class="app-wrapper" id="root">
+			<div id="retentionModal" class="modaldialogue">
+				<div class="modaltext">
+					<h2>
+						Our retention metric is based on session completion.
+						The table displays the number of sessions completed on a given day,
+						given the condition that the user completing a session has <i>already</i> completed at least
+						three sessions prior. This ensures that activity tracks users who have made accounts,
+						and have had consistent enough use of Asana to register repeated activity.
+					</h2>
+					<h4>
+						<a href="#close" title="Close" class="close">X</a>
+					</h4>
+				</div>
+			</div>
+			<img class="logo" src="src/assets/asana_logo.png" />
+			<h6 class="app-title">Dashboard with Mixpanel</h6>
+			<div class="results-wrapper">
+				<div class="result">
+					<div id="trials">
+						<span id="trial-count">0</span><br/>New Trials<br/>Last Month
+					</div>
+				</div>
+				<div class="result" id="retention-result">
+					<div class="table-title">User Retention (<a href="#retentionModal">See Retention Metric</a>)</div>					
+					<div id="table-retention"></div>						
+				</div>						
+				<div class="result">
+					<table>
+						<caption>Top Blog Posts (Page Hits)</caption>
+						<tbody id="blog-table-body"></tbody>
+					</table>
+				</div>				
+				<div class="result" id="channel-result">
+					<div class="channel-title">Channel Traffic Generation</div>
+					<div class="channel-bar-wrapper" id="bars"></div>
+					<div class="channel-key-wrapper" id="key"></div>						
+				</div>
+			</div>
+		</div>
+		<script src="src/js/app.js"></script>
 	</body>
 </html>
